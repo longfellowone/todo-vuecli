@@ -1,35 +1,26 @@
 <template>
-  <div class="bg-green-500 text-white font-bold text-center text-6xl">
-    {{ result.todos[0].text }}
-  </div>
+  <!-- <ul v-if="result && result.todos">
+    <li v-for="todo in result.todos" :key="todo.id">{{ todo.text }}</li>
+  </ul> -->
+  <ul>
+    <li v-for="todo in todos" :key="todo.id" class="text-6xl">
+      {{ todo.text }}
+    </li>
+  </ul>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "@vue/composition-api"
 import { useTodosQuery } from "./generated/graphql"
-// import { useQuery } from "@vue/apollo-composable"
-// import gql from "graphql-tag"
+import { useResult } from "@vue/apollo-composable"
 
 export default defineComponent({
-  name: "App",
-  components: {},
   setup() {
-    const { result, loading } = useTodosQuery()
-    return { result, loading }
+    const { result } = useTodosQuery()
+    const todos = useResult(result, [])
 
-    // const { result } = useQuery(gql`
-    //   query Todos {
-    //     todos {
-    //       id
-    //       text
-    //     }
-    //   }
-    // `)
-    // console.log(result.value.todos)
-    // const add = (num: number) => {
-    //   console.log(num + 3)
-    // }
-    // add(2)
+    return { todos }
+    // return { result }
   }
 })
 </script>
