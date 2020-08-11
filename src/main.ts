@@ -1,15 +1,15 @@
-import Vue from "vue"
-import VueCompositionAPI, { provide } from "@vue/composition-api"
-import App from "./App.vue"
-import router from "./router"
-import store from "./store"
+import Vue from 'vue'
+import VueCompositionAPI, { provide } from '@vue/composition-api'
+import App from './App.vue'
+import router from './router'
+import store from './store'
 
-import "./tailwind.css"
-import ApolloClient from "apollo-boost"
-import { DefaultApolloClient } from "@vue/apollo-composable"
+import './tailwind.css'
+import ApolloClient from 'apollo-boost'
+import { DefaultApolloClient } from '@vue/apollo-composable'
 
 const apolloClient = new ApolloClient({
-  uri: "http://localhost:8000/"
+  uri: 'http://localhost:8000/',
 })
 
 Vue.config.productionTip = false
@@ -21,5 +21,5 @@ new Vue({
   },
   router,
   store,
-  render: h => h(App)
-}).$mount("#app")
+  render: h => h(App),
+}).$mount('#app')
