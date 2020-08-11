@@ -3,7 +3,6 @@ import VueCompositionAPI, { provide } from '@vue/composition-api'
 import App from './App.vue'
 import router from './router'
 import store from './store'
-
 import './tailwind.css'
 import ApolloClient from 'apollo-boost'
 import { DefaultApolloClient } from '@vue/apollo-composable'

@@ -3,6 +3,8 @@ const BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
 
 module.exports = {
   configureWebpack: {
-    plugins: [new BundleAnalyzerPlugin({ defaultSizes: 'gzip' })],
+    plugins: [
+      new BundleAnalyzerPlugin({ defaultSizes: 'gzip', openAnalyzer: false }),
+    ],
   },
 }
