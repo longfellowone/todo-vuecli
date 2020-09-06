@@ -7,9 +7,11 @@ import { defineComponent, PropType } from '@vue/composition-api'
 import { Todo } from '@/generated/graphql'
 
 export default defineComponent({
-  props: { todo: { type: Object as PropType<Todo>, required: true } },
-  setup({ todo }) {
-    console.log(todo.id)
+  props: {
+    todo: { type: Object as PropType<Todo>, required: true },
+  },
+  setup(props) {
+    return { props }
   },
 })
 </script>
