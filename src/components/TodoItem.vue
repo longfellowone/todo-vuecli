@@ -8,8 +8,8 @@ import { Todo } from '@/generated/graphql'
 
 export default defineComponent({
   props: { todo: { type: Object as PropType<Todo>, required: true } },
-  setup() {
-    // console.log(props.todo.id)
+  setup({ todo }) {
+    console.log(todo.id)
   },
 })
 </script>

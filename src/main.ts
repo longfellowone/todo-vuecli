@@ -8,7 +8,7 @@ import ApolloClient from 'apollo-boost'
 import { DefaultApolloClient } from '@vue/apollo-composable'
 
 const apolloClient = new ApolloClient({
-  uri: 'http://localhost:8000/',
+  uri: 'http://localhost:8080/',
 })
 
 Vue.config.productionTip = false
